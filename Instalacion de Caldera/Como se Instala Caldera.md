@@ -1,7 +1,7 @@
 # Instalación de CALDERA
 Emulación de adversarios utilizando CALDERA
 
-![logo](./Imagenes/caldera-logo.png)
+![alt text](./Imagenes/Caldera-logo.png "Logo caldera")
 
 **Escenario**
 
