@@ -23,7 +23,7 @@ El objetivo de este laboratorio es demostrar:
 **Requerimientos del Laboratorio**
 Para desarrollar debemos:
 * Maquina Linux (Preferible virtual para poder practicar la instalación)
-* Mantener nuestra maquina virtual actualizada
+* Mantener nuestra máquina virtual actualizada
 * Tener Python instalado en nuestra maquina
 
 Duración del laboratorio: 30 minutos
@@ -84,7 +84,7 @@ iniciamos el servicio CALDERA para poder usarlo.
 
 
 ### *Nota (error versión de golang)*
-Si al momento de iniciar el servicio de calrdera aparece el siguiente error **(go does not meet the minumun version of 1.11)** por favor seguir los siguientes comandos para instalar/actualizar la versión de **golang**:
+Si al momento de iniciar el servicio de caldera aparece el siguiente error **(go does not meet the minumun version of 1.11)** por favor seguir los siguientes comandos para instalar/actualizar la versión de **golang**:
 * Descargar la última versión de go : https://golang.org/dl/
 * Extraerlo en / usr / local usando el siguiente comando. Estoy usando Go 1.17.2 aquí. Es posible que deba reemplazar el nombre de archivo con el nombre de archivo real según la versión que haya descargado.
 ```
@@ -173,7 +173,7 @@ A continuación, se muestra un ejemplo de lo explicado anteriormente, una vez pe
 ![alt text](./Imagenes/Agente-Caldera/caldera-mitre-guide-CorrerScrip.png "Ejecucion de Scrip")
 
 ### Nota 2
-Aqui podemos ver como la maquina ya esta conectada de manera correcta en la consola de CALDERA
+Aquí podemos ver como la maquina ya esta conectada de manera correcta en la consola de CALDERA
 
 ![alt text](./Imagenes/Agente-Caldera/caldera-mitre-guide-ScripCorriendo.png "Ejecucion de Scrip")
 
