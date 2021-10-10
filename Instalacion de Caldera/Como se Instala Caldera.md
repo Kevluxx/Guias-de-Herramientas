@@ -1,6 +1,8 @@
 # Instalación de CALDERA
 Emulación de adversarios utilizando CALDERA
 
+![logo](./Imagenes/caldera-logo.png)
+
 **Escenario**
 
 El objetivo de este laboratorio es aprender la manera de instalar y de utilizar CALDERA, una herramienta que se utilizara para dirigir ataques a gran escala, utilizando ataques muy eficientes, creando nos propio sistema de ataque, todo esto con el fin de mejorar nuestra infraestructura, seguridad de los equipos y utilizado como practica para nuestra defensa dentro de la organización.
@@ -8,7 +10,7 @@ El objetivo de este laboratorio es aprender la manera de instalar y de utilizar 
 **¿Qué es CALDERA?**
 Medir aspecto de la seguridad de la red a través de pruebas de ataque, Red team y emulación de adversarios requiere de muchos recursos. CALDERA ofrece un sistema inteligente y automatizado de Red Team que puede reducir la necesidad de recursos que necesitan los equipos de seguridad en sus rutinas de pruebas, liberándolos para afrontar otros problemas críticos.
 
-CALDERA se puede utilizar para probar soluciones de seguridad y evaluar la posición de seguridad de una red frente a las técnicas de ataque utilizadas comúnmente posterior a ser comprometidas y contenidas en los modelos ATT&CK .CALDERA aprovecha el modelo  ATT&CK para identificar y replicar los comportamientos del adversario como si estuviera ocurriendo una intrusión real.Esto permite automatizar susceptibilidad de una red al éxito del adversario, lo que permite a las organizaciones ver sus redes a través de los ojos de una amenaza persistente avanzada bajo demanda de esta manera permite verificar las demandas y las configuraciones de seguridad en función de técnicas de amenazas conocidas.CALDERA utiliza un lenguaje de representación del adversario, el perfil ATT&CK, un motor de decisiones para procesar el conocimiento recopilado y elegir acciones posteriores, y un agente para realizar la operación. El uso de CALDERA puede reducir los recursos necesarios para las evaluaciones y permitir que los equipos rojos se concentren en soluciones sofisticadas para problemas más difíciles. También permitirá a las organizaciones ajustar más rápidamente los sistemas de detección de intrusos basados en el comportamiento a medida que se implementan.
+CALDERA se puede utilizar para probar soluciones de seguridad y evaluar la posición de seguridad de una red frente a las técnicas de ataque utilizadas comúnmente posterior a ser comprometidas y contenidas en los modelos ATT&CK .CALDERA aprovecha el modelo  ATT&CK para identificar y replicar los comportamientos del adversario como si estuviera ocurriendo una intrusión real. Esto permite automatizar susceptibilidad de una red al éxito del adversario, lo que permite a las organizaciones ver sus redes a través de los ojos de una amenaza persistente avanzada bajo demanda de esta manera permite verificar las demandas y las configuraciones de seguridad en función de técnicas de amenazas conocidas. CALDERA utiliza un lenguaje de representación del adversario, el perfil ATT&CK, un motor de decisiones para procesar el conocimiento recopilado y elegir acciones posteriores, y un agente para realizar la operación. El uso de CALDERA puede reducir los recursos necesarios para las evaluaciones y permitir que los equipos rojos se concentren en soluciones sofisticadas para problemas más difíciles. También permitirá a las organizaciones ajustar más rápidamente los sistemas de detección de intrusos basados en el comportamiento a medida que se implementan.
 
 CALDERA es complementario a otras formas de evaluación de la seguridad. La postura de seguridad de una red se evalúa comúnmente en función de los niveles de parches de softwares, los controles de seguridad y las herramientas de defensa. Si bien muchas herramientas de detección de intrusos se basan en la búsqueda de indicadores de amenazas conocidos que cambian con frecuencia, las evaluaciones y la detección de adversarios rara vez se basan en el comportamiento del adversario. Esto deja a los defensores adivinando cómo detectarían y responderían a las amenazas activas. CALDERA ayuda a los defensores a ir más allá de la detección de indicadores de compromiso a la detección y respuesta del comportamiento del adversario.
 
@@ -18,173 +20,24 @@ El objetivo de este laboratorio es demostrar:
 * Demostrar cómo se utiliza CALDERA
 * Mostrar que podemos hacer utilizando CALDERA
 
-Duración del laboratorios: 30 minutos
+**Requerimientos del Laboratorio**
+Para desarrollar debemos:
+* Maquina Linux (Preferible virtual para poder practicar la instalación)
+* Mantener nuestra maquina virtual actualizada
+* Tener Python instalado en nuestra maquina
 
+Duración del laboratorio: 30 minutos
 
-# 1. ¿Como Se instala CALDERA? (Ubuntu 18.04)
-### Paso 1 - Instalar CALDERA
-
-El primer paso y el mas importante es instalar __GIT__ utilizando el comando __sudo su__ y luego __apt install git__ , esto desde github podremos descargar CALDERA siguiendo este comando:
-```
-sudo su
-```
-
-```
-apt install git
-```
-
-![alt text](./Imagenes/caldera-guide-git-install.png "Instalacion de CALDERA")
-
-```
-git clone https://github.com/mitre/caldera.git --recursive --branch 3.0.0
-```
-
-![alt text](./Imagenes/caldera-guide-caldera-install.png "Instalacion de CALDERA")
-
-
-### Paso 2 - Verificar la carpeta de instalación de CALDERA
-
-Para iniciar con el comando __ls__ podremos listar los archivos dentro de la carpeta donde nos encontremos, y con el comando __cd__ podremos ingresar o cambiarnos de carpeta.
-Para este paso ingresaremos con __cd__ donde se encuentra CALDERA. Una vez dentro de la carpeta de CALDERA volveremos a colocar el comando __ls__ para ver los archivos contenidos en esta carpeta.
-
-![alt text](./Imagenes/caldera-guide-caldera-whereis.png "Dentro de la carpeta CALDERA")
-
-
-### Paso 3 - Instalar Python
-
-Utilizaremos el siguiente comando para instalar python en nuestro equipo:
-
-```
-sudo apt install python
-```
-
-![alt text](./Imagenes/caldera-guide-python-install.png "Instalacion de Python")
-
-### Paso 4 - Instalar Pip
-
-Utilizaremos el siguiente comando para instalar pip
-
-```
-sudo apt install python3-pip
-```
-
-![alt text](./Imagenes/caldera-guide-pip-install.png "Instalacion de Pip")
-
-### Paso 5 - Actualización de Python y Pip
-Utilizando el siguiente comando podremos actualizar python y pip:
-
-```
-python3 -m pip install --upgrade pip
-```
-```
-pip intall --upgrade pip
-```
-![alt text](./Imagenes/caldera-guide-pythonpip-update1.png "Actualizacion de Python y Pip")
-![alt text](./Imagenes/caldera-guide-pythonpip-update2.png "Actualizacion de Python y Pip")
-
-### Paso 5 - Instalar todos los requerimientos
-
-Para instalar todos los requerimientos utilizaremos los siguientes comandos:
-
-```
-pip3 install -r requirements.txt
-
-pip3 install -r requirements-dev.txt
-```
-![alt text](./Imagenes/caldera-guide-requirementes-install1.png "Instalacion de requerimientos")
-![alt text](./Imagenes/caldera-guide-requirementes-install2.png "Instalacion de requerimientos")
-
-### Paso 7 - Instalación de paquetes restantes
-
-Para instalar el resto de los paquete utilizaremos los siguientes comandos:
-
-```
-pip install crytography --force -reinstall
-```
-```
-sudo -H pip3 install --ignore-installed PyYAML
-```
-![alt text](./Imagenes/caldera-guide-requirementes-install3.png "Instalacion de requerimientos")
-![alt text](./Imagenes/caldera-guide-requirementes-install4-PyYALM.png "Instalacion de requerimientos")
-
-### Paso 8 - Iniciar CALDERA
-
-Para Iniciar CALDERA utilizamos el siguiente comando:
-
-```
-python3 server.py --insecure
-```
-![alt text](./Imagenes/caldera-guide-Caldera-Start.png "Inicio de CALDERA")
-
-### Nota 1 - Inicio de Sesión en CALDERA
-
-Para iniciar sección en CALDERA debemos saber cual es nuestra dirección __IP__ y luego a la misma agregarle el puerto __8888__, por ejemplo __IP:8888__ , o también __localhost:8888__
-Para saber nuestra dirección IP debemos introducir el comando __ifconfig__ , sin olvidar de instalar previamente el paquete de herramientas __NET__ , el cual lo podemos instalar utilizando el comando __sudo apt install net-tools__
-
-CALDERA tiene diferentes ambientes para iniciar,por ejemplo tenemos la opción para RED TEAM y BLUE TEAM
-
-Primero Ingresaremos al perfil de RED TEAM con las siguientes credenciales:
-```
-USER:admin  PASS:admin
-```
-
-Y seguidamenta ingresaremos al perfil BLUE TEAM con las siguientes credenciales:
-```
-USER: blue  PASS:admin 
-```
-
-![alt text](./Imagenes/caldera-guide-Inicio-sesion.png "Inicio de Usuario")
-
-### Paso 9 - Abrir una nueva ventana Putty - Terminal Linux
-
-Abrimos otro terminal de Putty y minimizamos el anterior con el que estábamos trabajando para que el servicio que se está ejecutando se quede y no se apague, seguimos trabajando en el otro terminal, dando el programa de putty accederemos nuevamente a nuestra sesión.
-De igual manera al abrir una nueva pestaña en la terminal podran seguir trabajando.
-
-### Paso 10 - Ir a la sección de agentes
-
-Vamos a la sesión del agente que está en el panel desplegable de la derecha y hacemos clic en *clic aquí para desplegar un agente*
-
-![alt text](./Imagenes/caldera-guide-Inicio-agente-web.png "Seccion de Agentes")
-
-### Paso 11 - Configurar un Agente
-
-Para configurar un agente primero debemos elegir el tipo de agente que usaremos para desplegarlo, existen cuatro plataformas:
-
-1. 54ndc47
-2. Elasticat
-3. Ragdoll
-4. Manx
-
-usaremos *54ndc47* haciendo clic en el menú desplegable y eligiendo esta opción.
-
-Luego en todas las plataformas debemos elegir el tipo de sistema operativo en el que vamos a desplegar el agente, en este caso elegiremos *linux*.
-
-![alt text](./Imagenes/caldera-guide-Configuracion-agente-web.png "Configuracion de Agentes")
-
-### Paso 12 - Desplegar Agente
-
-Para desplegar el agente debemos copiar el código que aparece a continuación
-
-![alt text](./Imagenes/caldera-guide-Configuracion-agente-webCode.png "Configuracion de Agentes")
-
- y pegarlo en la nueva terminal que abrimos, luego de esto abrimos otra terminal y minimizamos la que teníamos abierta.
-
-![alt text](./Imagenes/caldera-guide-caldera-desplegar-agente-comando.png "Configuracion de Agentes")
-
-### Paso 13 - Ver el Agente
-
-una vez que hayamos desplegado el agente, podemos verlo de esta forma.
-
-![alt text](./Imagenes/caldera-guide-Configuracion-agente-web-desplegado.png "Configuracion de Agentes")
-
-Luego podemos continuar con la parte del entorno 4.Caldera
-
-
-# 2. ¿Como Se instala CALDERA Mitre?
+# 1. ¿Como Se instala CALDERA Mitre?
 
 ### Paso 1 - Instalar CALDERA
 
-Necesitamos instalar CALDERA desde girhub con el siguiente comando:
+El primer paso que necesitamos realizar es actualizar nuestro equipo, esto lo realizamos con el siguiente comando:
+```
+Sudo apt-get update && apt-get upgrade -y
+```
+Luego de actualizar nuestra maquina podemos instalar CALDERA desde girhub con el comando: (el cual podemos copiar)
+
 
 ```
 git clone https://github.com/mitre/caldera.git --recursive --branch 3.0.0
@@ -193,19 +46,28 @@ git clone https://github.com/mitre/caldera.git --recursive --branch 3.0.0
 
 ### Paso 2 - Ir a la carpeta CALDERA
 
-Para iniciar con el comando __ls__ podremos listar los archivos dentro de la carpeta donde nos encontremos, y con el comando __cd__ podremos ingresar o cambiarnos de carpeta.
-Para este paso ingresaremos con __cd__ donde se encuentra CALDERA. Una vez dentro de la carpeta de CALDERA volveremos a colocar el comando __ls__ para ver los archivos contenidos en esta carpeta.
+Para iniciar, con el comando __ls__ podremos listar los archivos dentro de la carpeta donde nos encontremos, y con el comando __cd__ podremos ingresar o cambiarnos de carpeta.
+Para este paso ingresaremos con __cd__ donde se encuentra CALDERA. Una vez dentro de la carpeta de CALDERA volveremos a colocar el comando __ls__ para ver los archivos contenidos en esta carpeta. **(Utilizo el comando _pwd_ para saber en qué carpeta me encuentro)**
 
 ![alt text](./Imagenes/Caldera-Mitre/caldera-mitre-guide-carpetacaldera.png "Carpeta CALDERA")
 
 ### Paso 3 - Instalación de Requerimientos
 
-Nota: para realizar este comando debemos tener previamente instalado python3, pero mediante el comando
-*sudo apt install python* y *sudo apt install python3-pip* lo podemos obtener.
+**Nota**: para realizar este comando debemos tener previamente instalado python3, pero mediante el comando
+**sudo apt install python** y **sudo apt install python3-pip** lo podemos obtener.
+```
+sudo apt install python3
+```
+```
+sudo apt install python3-pip
+```
+![alt text](./Imagenes/Caldera-Mitre/caldera-mitre-guide-instalacion-pythonPip.png "Instalación de Python y Pip")
 
-Usando el comando *pip3 install -r requirements.txt* instalamos los requisitos necesarios para instalar CALDERA.
+Usando el comando **pip3 install -r requirements.txt** instalamos los requisitos necesarios para CALDERA.
+```
+pip3 install -r requirements.txt
+```
 
-![alt text](./Imagenes/Caldera-Mitre/caldera-mitre-guide-instalacion-pythonPip.png "Instalacion de Python y Pip")
 ![alt text](./Imagenes/Caldera-Mitre/caldera-mitre-guide-instalacion-requerimientos.png "Instalacion de Requerimientos")
 
 ### Paso 4 - Iniciar CALDERA
@@ -220,26 +82,66 @@ iniciamos el servicio CALDERA para poder usarlo.
 
 ![alt text](./Imagenes/Caldera-Mitre/caldera-mitre-guide-inicioCALDERA.png "Inicio de CALDERA")
 
+
+### *Nota (error versión de golang)*
+Si al momento de iniciar el servicio de calrdera aparece el siguiente error **(go does not meet the minumun version of 1.11)** por favor seguir los siguientes comandos para instalar/actualizar la versión de **golang**:
+* Descargar la última versión de go : https://golang.org/dl/
+* Extraerlo en / usr / local usando el siguiente comando. Estoy usando Go 1.17.2 aquí. Es posible que deba reemplazar el nombre de archivo con el nombre de archivo real según la versión que haya descargado.
+```
+tar -C /usr/local -xzf go1.17.2.linux-amd64.tar.gz
+```
+* Crea el directorio .go en casa. (Es fácil instalar los paquetes necesarios sin privilegios de administrador)
+```
+mkdir ~/.go
+```
+* Configure las siguientes variables de entorno
+```
+GOROOT=/usr/local/go
+GOPATH=~/.go
+PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+```
+* Actualice el comando go
+```
+sudo update-alternatives --install "/usr/bin/go" "go" "/usr/local/go/bin/go" 0
+sudo update-alternatives --set go /usr/local/go/bin/go
+```
+* Prueba la versión de golang
+```
+go version
+```
+Una vez se hagan estos pasos, podemos regresar a la carpeta CALDERA y ejecutar el comando:
+```
+python3 server.py --insecure
+```
+De estar todo bien, habremos eliminado el error **(go does not meet the minumun version of 1.11)**
+
+
+
+
 ### Paso 5 - Inicio de sesión en CALDERA
 
-Para iniciar sección en CALDERA debemos saber cual es nuestra dirección __IP__ y luego a la misma agregarle el puerto __8888__, por ejemplo __IP:8888__ , o también __localhost:8888__
-Para saber nuestra dirección IP debemos introducir el comando __ifconfig__ , sin olvidar de instalar previamente el paquete de herramientas __NET__ , el cual lo podemos instalar utilizando el comando __sudo apt install net-tools__
+Para iniciar sección en CALDERA debemos saber cual es nuestra dirección __IP__ y luego a la misma agregarle el puerto __8888__, por ejemplo __IP:8888__ , o también podemos colocar en el navegador __localhost:8888__.
 
-CALDERA tiene diferentes ambientes para iniciar,por ejemplo tenemos la opcion para RED TEAM y BLUE TEAM
+Para saber nuestra dirección IP debemos introducir el comando __ifconfig__ , sin olvidar de instalar previamente el paquete de herramientas __NET__ si nos muestra un error, el cual lo podemos instalar utilizando el comando:
+```
+ sudo apt install net-tools
+ ```
+
+CALDERA tiene diferentes ambientes para iniciar, por ejemplo, tenemos la opción para RED TEAM y BLUE TEAM
 
 Primero Ingresaremos al perfil de RED TEAM con las siguientes credenciales:
 ```
 USER:admin  PASS:admin
 ```
 
-Y seguidamenta ingresaremos al perfil BLUE TEAM con las siguientes credenciales:
+Y seguidamente ingresaremos al perfil BLUE TEAM con las siguientes credenciales:
 ```
 USER: blue  PASS:admin 
 ```
 
 ![alt text](./Imagenes/Caldera-Mitre/caldera-mitre-guide-PortalWeb.png "Inicio de Usuario")
 
-## Nota 1
+## Nota (Equipos)
 Aquí podemos ver el inicio de sesión en el grupo del equipo rojo, el equipo rojo se identificará con una franja azul en la parte inferior de la página
 
 ![alt text](./Imagenes/Caldera-Mitre/caldera-mitre-guide-PortalWeb-red.png "Inicio de Usuario")
@@ -280,7 +182,6 @@ En la pestaña de entrenamiento podemos ver que podemos agregar nuestra máquina
 
 ![alt text](./Imagenes/Agente-Caldera/caldera-mitre-guide-Training.png "Ejecucion de Scrip")
 
-
 # 4. Como Ejecutar un agente**
 
 ### Paso 1 - Menú de Operaciones
@@ -304,7 +205,7 @@ Por ejemplo, recopilación de información, escaneo de vulnerabilidades, verific
 
 ### Paso 3 - Menú del perfil de adversario
 
-En la pestaña de perfiles del adversario podemos ver los tipos de ataques y los procesos que realizan, en este menu podemos personalizar un ataque que queramos con las habilidades y características de varios ataques.
+En la pestaña de perfiles del adversario podemos ver los tipos de ataques y los procesos que realizan, en este menú podemos personalizar un ataque que queramos con las habilidades y características de varios ataques.
 
 ![alt text](./Imagenes/Ambiente-Caldera/caldera-mitre-guide-STEP3.png "Menu de Adversario")
 
@@ -358,7 +259,6 @@ En nuestra operación hemos encontrado el archivo passwd, que es donde se almace
 
 ![alt text](./Imagenes/Ambiente-Caldera/caldera-mitre-guide-STEP10.png "Resultado del Ataque")
 
-
 # 5. Material Adicional**
 
 [CALDERA: Automating Adversary Emulation] https://www.youtube.com/watch?v=fx3635hLewg
@@ -379,4 +279,4 @@ En nuestra operación hemos encontrado el archivo passwd, que es donde se almace
 
 *Redes sociales "Kevluxx"*
 
-*Ultima actualización 05/10/21*
+*Ultima actualización 10/10/21*
